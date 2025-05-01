@@ -15,7 +15,7 @@ import react from '@vitejs/plugin-react';
     server: {
       host: '0.0.0.0',
       port: 4562,
-      allowedHosts: ['mobile-website-plj8.onrender.com'],
+      allowedHosts: ['mobile-website-1.onrender.com'],
       proxy: {
         '/api': {
           target: "https://mobile-website-plj8.onrender.com",
