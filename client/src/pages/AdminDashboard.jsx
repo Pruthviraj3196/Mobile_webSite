@@ -9,7 +9,7 @@ const AdminDashboard = () => {
   const [editingProductId, setEditingProductId] = useState(null);
 
   const fetchProducts = async () => {
-    const res = await axios.get('http://localhost:5000/api/products', {
+    const res = await axios.get('https://mobile-website-plj8.onrender.com/api/products', {
       headers: { Authorization: `Bearer ${token}` },
     });
     setProducts(res.data);
@@ -20,7 +20,7 @@ const AdminDashboard = () => {
   }, [token]);
 
   const handleCreate = async () => {
-    const res = await axios.post('http://localhost:5000/api/products', form, {
+    const res = await axios.post('https://mobile-website-plj8.onrender.com/api/products', form, {
       headers: { Authorization: `Bearer ${token}` },
     });
     setProducts([...products, res.data]);
@@ -28,14 +28,14 @@ const AdminDashboard = () => {
   };
 
   const handleDelete = async (id) => {
-    await axios.delete(`http://localhost:5000/api/products/${id}`, {
+    await axios.delete(`https://mobile-website-plj8.onrender.com/api/products/${id}`, {
       headers: { Authorization: `Bearer ${token}` },
     });
     setProducts(products.filter(p => p._id !== id));
   };
 
   const handleUpdate = async () => {
-    const res = await axios.put(`http://localhost:5000/api/products/${editingProductId}`, form, {
+    const res = await axios.put(`https://mobile-website-plj8.onrender.com/api/products/${editingProductId}`, form, {
       headers: { Authorization: `Bearer ${token}` },
     });
     setProducts(products.map(p => (p._id === editingProductId ? res.data : p)));

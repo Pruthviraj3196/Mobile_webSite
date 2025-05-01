@@ -10,7 +10,7 @@ const SignupPage = () => {
 
   const handleSignup = async (e) => {
     e.preventDefault();
-    await axios.post('http://localhost:5000/api/users/signup', { email, password, role });
+    await axios.post('https://mobile-website-plj8.onrender.com/api/users/signup', { email, password, role });
     navigate('/login');
   };
 

@@ -7,7 +7,7 @@ const ProductDetail = () => {
   const [product, setProduct] = useState(null);
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/products/${id}`)
+    axios.get(`https://mobile-website-plj8.onrender.com/api/products/${id}`)
       .then(res => setProduct(res.data))
       .catch(err => console.error('Failed to fetch product:', err));
   }, [id]);

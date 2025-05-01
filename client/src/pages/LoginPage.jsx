@@ -12,7 +12,7 @@ const LoginPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const res = await axios.post('http://localhost:5000/api/users/login', { email, password });
+    const res = await axios.post('https://mobile-website-plj8.onrender.com/api/users/login', { email, password });
     const token = res.data.token;
     const decoded = JSON.parse(atob(token.split('.')[1]));
     dispatch(setUser({ token, role: decoded.role }));
